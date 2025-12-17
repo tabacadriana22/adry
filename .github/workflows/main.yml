@@ -72,13 +72,7 @@ jobs:
         seleniumbase install chromedriver
     - name: Run python adry.py --debug
       run: |
-        python adry.py --brave --do-not-track --xvfb --screenshot
-    - name: Upload screenshots
-      uses: actions/upload-artifact@v4
-      with:
-        name: seleniumbase-screenshots
-        path: |
-          ./latest_logs/
+        python adry.py --brave --do-not-track --xvfb 
     - name: Random pause
       run: |
         sleep $((RANDOM % 10 + 1))
